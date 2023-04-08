@@ -1,0 +1,120 @@
+.player-wrapper {
+    position: relative;
+    margin-right: 20px;
+    height: 517px;
+    overflow: hidden;
+}
+.video-wrapper {
+    position: relative;
+}
+//visibility
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+.video {
+    width: 290px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.thumbnail {
+    display: none;
+    width: 290px;
+    height: 517px;
+    border-radius: 8px;
+}
+
+//btns
+.ctrl-btns {
+    position: absolute;
+    bottom: 22px;
+    padding: 10px;
+    background-color: transparent;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 400ms;
+    transition-timing-function: ease;
+}
+.player-wrapper:hover .ctrl-btns {
+    opacity: 1;
+}
+.play-btn {
+    left: 14px;
+}
+.report-btn {
+    height: fit-content;
+    right: 6px;
+    top: 10px;
+}
+
+.action-text {
+    color: white;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 1.6rem;
+    display: inline-block;
+}
+
+//volume
+
+.volume-btn {
+    right: 20px;
+}
+.volume-btn:hover ~ .volume-slider,
+.volume-slider:hover {
+    display: unset;
+}
+.volume-slider {
+    display: none;
+    width: 64px;
+    height: 24px;
+    transform: translateY(-50%) rotate(-90deg);
+    position: absolute;
+    right: 10px;
+    //
+    bottom: 74px;
+    background-color: rgba(22, 24, 35, 0.34);
+    border-radius: 32px;
+}
+input[type='range'] {
+    -webkit-appearance: none;
+    position: absolute;
+    width: 48px;
+    height: 2px;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: white;
+    cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+//icons
+.play-icon {
+    height: 20px;
+    width: 20px;
+    color: white;
+}
+.volume-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+.flag-icon {
+    margin-right: 4px;
+    width: 12px;
+    height: 18px;
+    color: white;
+    transform: translateY(10%);
+}

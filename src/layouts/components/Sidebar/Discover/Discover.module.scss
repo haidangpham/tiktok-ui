@@ -1,0 +1,51 @@
+.light {
+    --item-background-color: white;
+}
+.dark {
+    --item-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px 8px 8px 8px;
+}
+.label {
+    width: 100%;
+    padding-bottom: 16px;
+    color: var(--text-color-secondary);
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+.item {
+    width: fit-content;
+    max-width: 100%;
+    height: 24px;
+    display: flex;
+    margin: 0 8px 12px 0;
+    padding: 3px 10px;
+    border: 1px solid rgba(22, 24, 35, 0.2);
+    border-radius: 12px;
+    background: var(--item-background-color);
+    cursor: pointer;
+    &:hover {
+        background: var(--field-background-hover);
+    }
+    transition: background 200ms ease-in-out 0s;
+}
+.icon {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: var(--text-color-secondary);
+}
+.title {
+    padding-left: 6px;
+    line-height: 1.8rem;
+    color: var(--text-color-secondary);
+    font-weight: 400;
+    font-size: 1.4rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+//banner

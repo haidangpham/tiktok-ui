@@ -1,0 +1,126 @@
+.item-wrapper {
+    display: flex;
+    position: relative;
+    width: 692px;
+    max-width: 692px;
+    height: fit-content;
+    max-height: 730px;
+    padding: 20px 0;
+    background-color: var(--background-color);
+}
+.avatar {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.content {
+    position: relative;
+    margin-left: 12px;
+    width: 624px;
+    color: var(--text-color);
+    z-index: 0;
+}
+//post-info
+.post-desc {
+    width: 510px;
+    overflow-wrap: break-word;
+}
+.check-circle {
+    margin-left: 4px;
+    font-size: 1.4rem;
+    color: rgb(32, 213, 236);
+}
+.check-circle,
+.name,
+.username {
+    display: inline-block;
+}
+.username {
+    font-weight: 700;
+    margin-right: 4px;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.name {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+//music-track
+.video-music {
+    margin: 4px 0 12px 0;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.music-icon {
+    margin-right: 5px;
+}
+.music-name {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+//video
+.video-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+hr {
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    padding: 0 8px;
+    background-color: rgba(22, 24, 35, 0.12);
+    border: none;
+}
+
+.action-btns {
+    display: flex;
+    flex-direction: column;
+}
+.action-item {
+    background-color: unset;
+    cursor: pointer;
+}
+.icon-wrapper {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    margin: 8px 0 6px 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--action-btn-background);
+    transition: background-color 0.3s ease;
+    &.icon-wrapper:active {
+        background-color: rgba(22, 24, 35, 0.15);
+    }
+}
+
+.action-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--text-color);
+}
+
+.count {
+    font-family: var(--font-family);
+    color: var(--text-color-secondary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.7rem;
+    text-align: center;
+}
+
+.follow-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

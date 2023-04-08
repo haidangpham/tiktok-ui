@@ -1,0 +1,119 @@
+.corner-actions {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+    height: fit-content;
+    right: 24px;
+    bottom: 0;
+    transform: translateY(40px);
+    //slide-in animation
+    transition: all 400ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+.get-app {
+    display: block;
+    position: relative;
+}
+//Get App
+.get-app-btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 12px;
+    width: 90px;
+    height: 32px;
+    background-color: var(--background-color-secondary);
+    border: solid 1px rgba(22, 24, 35, 0.12);
+    border-radius: 52px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-color-secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+    transform-origin: right bottom;
+    transition: transform 0.3s cubic-bezier(0.4, 0.14, 0.3, 1);
+}
+
+.expand-container {
+    display: block;
+    margin-bottom: 10px;
+    transform: scale(0);
+    position: relative;
+    border: 1px solid rgba(22, 24, 35, 0.03);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+    background-color: var(--background-color-secondary);
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    transform-origin: right bottom;
+    transition: transform 0.3s cubic-bezier(0.4, 0.14, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0.14, 0.3, 1) 0s;
+}
+.item-container {
+    margin: 0 48px 0 16px;
+    cursor: pointer;
+}
+.expand-item {
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 8px;
+    &:hover {
+        background-color: var(--item-background-hover);
+    }
+}
+.item-text {
+    margin-left: 8px;
+}
+.div-split {
+    width: calc(100% - 16px);
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    transform: scaleY(0.5);
+}
+.x-mark {
+    right: 16px;
+    position: absolute;
+    top: 16px;
+    cursor: pointer;
+}
+
+.to-top {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    cursor: pointer;
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+    }
+    &:active {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), #fe2c55;
+    }
+}
+//transform animation
+.get-app-exit {
+    transform: scale(0);
+}
+.expand-container-entrance {
+    transform: scale(1);
+}
+
+.btn-exit {
+    transform: translateY(40px);
+}
+.btn-entrance {
+    transform: translateY(0);
+}

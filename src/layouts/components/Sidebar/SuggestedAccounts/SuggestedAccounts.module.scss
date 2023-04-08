@@ -1,0 +1,66 @@
+.wrapper {
+    width: 340px;
+    padding: 16px 0;
+}
+.label {
+    padding: 0 8px;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    line-height: 20px;
+    color: var(--text-color-secondary);
+    font-weight: 600;
+}
+.account-items {
+    display: flex;
+    margin-right: 16px;
+    padding: 8px;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--field-background-hover);
+        transition: background-color ease-in-out 200ms;
+    }
+}
+.avatar {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.item-info {
+    flex: 1;
+}
+.username {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    font-weight: 700;
+    line-height: 1.1;
+}
+.check-circle {
+    margin-left: 4px;
+}
+.name {
+    height: 15px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 15px;
+}
+.more-btn {
+    width: fit-content;
+    margin-top: 8px;
+    padding: 0 8px;
+    line-height: 20px;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+hr {
+    height: 1px;
+    padding: 0 8px;
+    background-color: rgba(22, 24, 35, 0.12);
+    border: none;
+}

@@ -1,0 +1,125 @@
+@import 'normalize.css';
+
+:root {
+    --primary: rgba(254, 44, 85, 1);
+
+    //default
+    --default-header-height: 60px;
+    --default-layout-width: 1150px;
+    --layout-horizontal-spacer: 24px;
+    --font-family: 'ProximaNova', sans-serif;
+    --sidebar-width: 340px;
+}
+.light {
+    --text-color: rgb(22, 24, 35);
+    --background-color: #fff;
+    --background-color-secondary: #fff;
+    --text-color-secondary: rgba(22, 24, 35, 0.75);
+    --field-background: rgba(22, 24, 35, 0.06);
+    --action-btn-background: rgba(22, 24, 35, 0.06);
+    //
+    --field-background-hover: rgba(22, 24, 35, 0.03);
+    --item-background-hover: rgba(22, 24, 35, 0.03);
+
+    --shadow-color: 0 1px 1px rgb(0 0 0/ 12%);
+    --lines-color: rgba(0, 0, 0, 0.12);
+    --icons-color: rgba(22, 24, 35, 0.34);
+}
+.dark {
+    --background-color: rgb(18, 18, 18);
+    --background-color-secondary: rgb(37, 37, 37);
+    --text-color: rgba(255, 255, 255, 0.9);
+    --text-color-secondary: rgba(255, 255, 255, 0.75);
+    --field-background: rgba(255, 255, 255, 0.12);
+    --action-btn-background: rgba(255, 255, 255, 0.12);
+    //like-cmt, upload-btn
+    --field-background-hover: rgba(255, 255, 255, 0.04);
+    --item-background-hover: rgba(255, 255, 255, 0.04);
+
+    --shadow-color: 0px 1px 1px rgba(255, 255, 255, 0.12);
+    --lines-color: rgba(255, 255, 255, 0.12);
+    --icons-color: rgba(255, 255, 255, 0.34);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    color: var(--black-text);
+    background-color: var(--background-color);
+}
+
+a {
+    color: var(--white-text);
+    text-decoration: none;
+}
+
+//Srollbar
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--field-background-hover);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+//Fonts emmbed
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Bold.woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: SofiaPro;
+    src: url('/assets/fonts/sofiapro-bold.woff2');
+    font-weight: 700;
+}
+
+//Custom tippy tiptool
+body {
+    .tippy-box {
+        border-radius: 8px;
+        background-color: rgba(84, 84, 84, 0.92);
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+    .tippy-content {
+        padding: 8px;
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow {
+        top: -1px;
+    }
+}

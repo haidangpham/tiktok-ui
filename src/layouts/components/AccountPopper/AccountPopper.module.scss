@@ -1,0 +1,58 @@
+.check-circle {
+    margin-left: 4px;
+}
+
+.popper-wrapper {
+    width: 320px;
+    padding: 20px;
+    background-color: var(--background-color-secondary);
+    box-shadow: rgb(0 0 0/ 12%) 0px 2px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+}
+.popper-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.avatar-popper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.btn-popper {
+    display: inline-block;
+}
+.username-popper {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    cursor: pointer;
+}
+.name-popper {
+    // color: rgb(22, 24, 35);
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    cursor: pointer;
+}
+.count {
+    margin-right: 6px;
+    // color: rgba(22, 24, 35, 1);
+    font-weight: 700;
+}
+.f-l {
+    color: var(--text-color-secondary);
+    margin-right: 12px;
+}
+.bio {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+    font-size: 1.4rem;
+    line-height: 2rem;
+}

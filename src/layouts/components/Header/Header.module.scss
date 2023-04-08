@@ -1,0 +1,88 @@
+.wrapper {
+    --round-border: 92px;
+    --search-height: 46px;
+    --search-vertical-spacer: 18px;
+    --search-button-width: 52px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: var(--default-header-height);
+    box-shadow: var(--shadow-color);
+    justify-content: center;
+    z-index: 10;
+}
+
+.inner {
+    display: flex;
+    width: var(--default-layout-width);
+    height: 100%;
+    padding: 0 var(--layout-horizontal-spacer);
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+}
+.logo {
+    display: flex;
+    height: 42px;
+    width: 300px;
+    max-width: 300px;
+}
+
+.plus {
+    margin-right: 8px;
+}
+
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.more-btn {
+    padding: 2px 6px;
+    font-size: 2rem;
+    margin-left: 26px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+//
+
+.action-btn {
+    background-color: transparent;
+    margin-left: 16px;
+    cursor: pointer;
+}
+.action-btn {
+    .messages {
+        width: 26px;
+        height: 30px;
+    }
+    .inbox {
+        width: 32px;
+        height: 32px;
+        color: var(--text-color);
+    }
+}
+
+.user-avatar {
+    margin: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}

@@ -1,0 +1,6 @@
+.wrapper {
+    width: auto;
+    margin-left: calc(var(--sidebar-width) + 60px);
+    padding: 24px 0;
+    z-index: -1;
+}

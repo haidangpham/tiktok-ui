@@ -1,0 +1,47 @@
+.feed-share-popper {
+    position: relative;
+    width: 280px;
+    height: fit-content;
+    padding: 8px 4px 8px 0;
+    background-color: var(--background-color-secondary);
+    box-shadow: rgb(0 0 0/ 12%) 0px 2px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    &.feed-share-popper > * {
+        cursor: pointer;
+    }
+}
+.share-option {
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+    padding: 11px 16px;
+    width: 100%;
+    &:hover {
+        background-color: var(--item-background-hover);
+    }
+}
+
+.share-text {
+    margin-left: 12px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.arrow-down-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 24px;
+    color: var(--text-color);
+    background-color: unset;
+    &:hover {
+        background-color: var(--item-background-hover);
+    }
+}
+.popper-arrow {
+    position: absolute;
+    left: 42px;
+    transform: rotate(180deg) scale(1.5) translateY(-16%);
+    color: var(--background-color-secondary);
+}
+//Tippy

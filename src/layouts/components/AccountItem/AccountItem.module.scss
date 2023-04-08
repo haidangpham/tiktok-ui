@@ -1,0 +1,41 @@
+.light {
+    --background-color: #fff;
+    --text-color: rgba(22, 24, 35, 0.5);
+}
+
+.dark {
+    --background-color: rgba(255, 255, 255, 0.12);
+    --text-color: rgba(255, 255, 255, 0.5);
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    cursor: pointer;
+    // background-color: var(--background-color);
+    &:hover {
+        background-color: var(--item-background-hover);
+    }
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.info {
+    flex: 1;
+    margin-left: 12px;
+}
+.username {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.check-icon {
+    margin-left: 6px;
+    color: rgb(32, 213, 236);
+}
+.name {
+    font-size: 1.3rem;
+    color: var(--text-color);
+}

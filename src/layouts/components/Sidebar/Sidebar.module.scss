@@ -1,0 +1,31 @@
+.wrapper {
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--default-header-height));
+    padding: 20px 0 26px 8px;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.divider {
+    display: block;
+    height: 1px;
+    padding: 0 8px;
+    background-color: var(--lines-color);
+    border: none;
+    transform: scaleY(0.5);
+}

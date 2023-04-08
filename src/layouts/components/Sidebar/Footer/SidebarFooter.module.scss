@@ -1,0 +1,59 @@
+.footer-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 16px 0 0 8px;
+}
+.banner {
+    width: 320px;
+    height: 52px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+//hover zoom
+.banner:hover ~ .container,
+.container:hover {
+    transform: scale(1.06);
+    transition: transform 200ms cubic-bezier(0.25, 0, 0.25, 1);
+}
+
+.container {
+    width: 320px;
+    margin: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 30px;
+    left: 0;
+    right: 0;
+}
+
+.banner-icon {
+    width: 1.9rem;
+    height: 1.9rem;
+    margin: 2px 9px 0 0;
+}
+.banner-title {
+    font-size: 16px;
+}
+
+.nav-container {
+    height: fit-content;
+    padding-bottom: 8px;
+}
+
+.nav-container a[href] {
+    color: var(--text-color-secondary);
+}
+
+.nav,
+.coppyright {
+    display: inline-block;
+    margin: 5px 6px 0 0;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    color: var(--text-color-secondary);
+}
+.nav:hover {
+    text-decoration: underline;
+}
