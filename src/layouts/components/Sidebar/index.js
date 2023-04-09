@@ -41,7 +41,7 @@ function Sidebar() {
             title: 'Tình Đã Đầy Một Tim - Huyền Tâm Môn',
         },
     ];
-
+    const suggestAccountId=[2, 3, 1, 4, 2, 3, 1, 4, 2, 4]
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -55,9 +55,9 @@ function Sidebar() {
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveIconActive />} />
             </Menu>
             <span className={cx('divider')}></span>
-            <SuggestedAccounts label="Suggested accounts" />
+            <SuggestedAccounts label="Suggested accounts" suggestAccountList={suggestAccountId}/>
             <span className={cx('divider')}></span>
-            <SuggestedAccounts label="Following accounts" />
+            <SuggestedAccounts label="Following accounts" suggestAccountList={suggestAccountId}/>
             <span className={cx('divider')}></span>
             <Discover data={tags} label="Discover" />
             <span className={cx('divider')}></span>

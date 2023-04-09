@@ -7,13 +7,6 @@ const cx = classNames.bind(styles);
 function SidebarFooter() {
     return (
         <div className={cx('footer-wrapper')}>
-            <a href="https://effecthouse.tiktok.com/" target="_blank" rel="noreferrer">
-                <img className={cx('banner')} src={images.backgroundBanner} alt="" />
-                <div className={cx('container')}>
-                    <BannerIcon className={cx('banner-icon')} />
-                    <h4 className={cx('banner-title')}>Create effects</h4>
-                </div>
-            </a>
 
             <div className={cx('nav-container')}>
                 <a className={cx('nav')} href="https://www.tiktok.com/about">
