@@ -15,5 +15,9 @@ const videos = {
         src: require('./ciinvideo.mp4'),
         thumb: require('../images/videoThumbnail/ciin-thumbnail.jpeg'),
     },
+    video5: {
+        src: require('./mocachodien-post.mp4'),
+        thumb: require('../images/videoThumbnail/moca-thumb.jpeg'),
+    },
 };
 export default videos;

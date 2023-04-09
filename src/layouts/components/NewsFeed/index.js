@@ -9,6 +9,7 @@ const cx = classNames.bind(styles);
 function NewsFeed() {
     return (
         <div className={cx('wrapper')}>
+            <FeedItem postId={5} />
             <FeedItem postId={1} />
             <FeedItem postId={2} />
             <FeedItem postId={3} />

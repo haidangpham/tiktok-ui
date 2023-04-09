@@ -36,7 +36,7 @@ function AccountPopper({
                 delay={delay}
                 offset={offset}
                 render={(props) => (
-                    <div tabIndex="-1" className={cx('popper-wrapper')} {...props}>
+                    <div className={cx('popper-wrapper')} {...props}>
                         <div className={cx('popper-header')}>
                             <img className={cx('avatar-popper')} src={userInfo.avatar || images.noImage} alt="" />
                             <div className={cx('btn-popper')}>
