@@ -7,23 +7,31 @@ import { userData } from '../../../assets/data';
 import Button from '../Button/Button';
 import { CheckCircle } from '../../../components/Icons';
 const cx = classNames.bind(styles);
-function UserCard({ userId, video, currentPlay }) {
+function UserCard({ userId, video, setCurrentPlay, currentPlay }) {
     const userInfo = userData.find((user) => userId === user.id);
     const videoRef = useRef();
     const handleMouseOver = (e) => {
         e.target.play();
+        setCurrentPlay(videoRef.current);
     };
-    console.log(currentPlay);
+   const handlePause=(e)=>{
+    console.log(currentPlay !== videoRef)
+        videoRef.current.pause()
+
+}
+    
+    // console.log(setCurrentPlay);
     return (
         <div className={cx('user-card')}>
             <Link to={`/@${userInfo.username}`}>
-                <div className={cx('card-container')}>
+                <div className={cx('card-container')} >
                     <video
                         muted
                         poster={video.thumb}
                         ref={videoRef}
                         className={cx('video')}
                         onMouseOver={handleMouseOver}
+                        onMouseLeave={handlePause}
                         src={video.src}
                     />
                     <div className={cx('account-info')}>

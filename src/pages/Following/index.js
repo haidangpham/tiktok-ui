@@ -16,12 +16,12 @@ const suggestData = [
 ];
 function Following() {
     const [currentPlay, setCurrentPlay] = useState();
-
+    console.log(currentPlay);
     return (
         <section className={cx('user-list-wrapper')}>
             <div className={cx('user-card-list')}>
                 {suggestData.map((item, index) => (
-                <UserCard key={index} userId={item.userId} video={item.video} currentPlay={currentPlay} />
+                <UserCard key={index} userId={item.userId} video={item.video} setCurrentPlay={setCurrentPlay} currentPlay={currentPlay} />
             ))}
             </div>
             
