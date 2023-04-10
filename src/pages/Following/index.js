@@ -19,9 +19,12 @@ function Following() {
 
     return (
         <section className={cx('user-list-wrapper')}>
-            {suggestData.map((item, index) => (
+            <div className={cx('user-card-list')}>
+                {suggestData.map((item, index) => (
                 <UserCard key={index} userId={item.userId} video={item.video} currentPlay={currentPlay} />
             ))}
+            </div>
+            
             <CornerActions />
         </section>
     );

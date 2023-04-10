@@ -93,7 +93,7 @@ function FeedItem({ postId }) {
                     </Button>
                 </div>
             </div>
-            <hr />
+            <hr  className={cx('feed-divider')}/>
         </div>
     );
 }
