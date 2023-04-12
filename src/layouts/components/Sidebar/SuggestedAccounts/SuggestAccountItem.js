@@ -1,5 +1,4 @@
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import classNames from 'classnames/bind';
 import Proptypes from 'prop-types';
 
@@ -9,16 +8,24 @@ import { userData } from '../../../../assets/data';
 import images from '../../../../assets/images';
 import AccountPopper from '../../AccountPopper';
 import { CheckCircle } from '../../../../components/Icons';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 function SuggestAccountItem({ id }) {
+    const [following, setFollowing]= useState(false)
+    
+    //Handle Following
+    const handleFollow= ()=>{
+        setFollowing(!following)
+        console.log('executed');
+    }
     const userInfo = userData.find((user) => user.id === id);
     if (userInfo.avatar === '') {
         userInfo.avatar = images.noImage;
     }
     return (
         <div>
-            <AccountPopper userInfo={userInfo} delay={[900, 0]} primary offset={[-8, 0]}>
+            <AccountPopper userInfo={userInfo} delay={[900, 0]} primary offset={[-8, 0]} following={following} handleFollow={handleFollow}>
                 <div className={cx('account-items')}>
                     <img className={cx('avatar')} src={userInfo.avatar} alt="" />
                     <div className={cx('item-info')}>

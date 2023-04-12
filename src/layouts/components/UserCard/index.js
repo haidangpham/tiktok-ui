@@ -7,20 +7,21 @@ import { userData } from '../../../assets/data';
 import Button from '../Button/Button';
 import { CheckCircle } from '../../../components/Icons';
 const cx = classNames.bind(styles);
-function UserCard({ userId, video, setCurrentPlay, currentPlay }) {
+function UserCard({ userId, video, setCurrentPlay}) {
     const userInfo = userData.find((user) => userId === user.id);
     const videoRef = useRef();
+    
     const handleMouseOver = (e) => {
         e.target.play();
         setCurrentPlay(videoRef.current);
-    };
-   const handlePause=(e)=>{
-    console.log(currentPlay !== videoRef)
+        
+    }
+    const handlePause= (e)=>{
+        e.target.currentTime = 0
         videoRef.current.pause()
+    }
 
-}
     
-    // console.log(setCurrentPlay);
     return (
         <div className={cx('user-card')}>
             <Link to={`/@${userInfo.username}`}>

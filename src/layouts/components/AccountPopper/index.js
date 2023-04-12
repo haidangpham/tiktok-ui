@@ -1,5 +1,4 @@
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import classNames from 'classnames/bind';
 import Proptypes from 'prop-types';
 import Tippy, { tippy } from '@tippyjs/react/headless';
@@ -16,6 +15,8 @@ function AccountPopper({
     userInfo,
     offset = [0, 0],
     primary,
+    following,
+    handleFollow,
     bio = null,
     triggerRef1 = null,
     triggerRef2 = null,
@@ -40,15 +41,16 @@ function AccountPopper({
                         <div className={cx('popper-header')}>
                             <img className={cx('avatar-popper')} src={userInfo.avatar || images.noImage} alt="" />
                             <div className={cx('btn-popper')}>
-                                {primary ? (
-                                    <Button primary>
+                                {/* Following Button */}
+                                { following ?<Button onClick={handleFollow} classic><span>Following</span></Button> :(primary ? (
+                                    <Button onClick={handleFollow} primary>
                                         <span>Follow</span>
                                     </Button>
                                 ) : (
-                                    <Button outline>
+                                    <Button onClick={handleFollow} outline>
                                         <span>Follow</span>
                                     </Button>
-                                )}
+                                ))}
                             </div>
                         </div>
                         <span className={cx('username-popper')}>{userInfo.username}</span>

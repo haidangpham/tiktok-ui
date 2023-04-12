@@ -17,10 +17,14 @@ const cx = classNames.bind(styles);
 function FeedItem({ postId }) {
     const postInfo = posts.find((post) => post.id === postId);
     const userInfo = userData.find((user) => user.id === postInfo.userId);
-
+    //trigger target
     const triggerRef1 = useRef();
     const triggerRef2 = useRef();
-
+    //follow handle
+    const [following, setFollowing]= useState()
+    const handleFollow= ()=>{
+        setFollowing(!following)
+    }
     // eslint-disable-next-line no-unused-vars
     const [triggerRefsChanged, setTriggerRefsChanged] = useState(false);
 
@@ -38,6 +42,8 @@ function FeedItem({ postId }) {
                     delay={[900, 300]}
                     triggerRef1={triggerRef1.current}
                     triggerRef2={triggerRef2.current}
+                    following={following}
+                    handleFollow={handleFollow}
                 >
                     <img src={userInfo.avatar} alt="avatar" className={cx('avatar')} ref={triggerRef1} />
                 </AccountPopper>
@@ -88,9 +94,13 @@ function FeedItem({ postId }) {
                     </div>
                 </div>
                 <div className={cx('follow-wrapper')}>
-                    <Button outline small>
-                        Follow
-                    </Button>
+                    {following?
+                        <Button onClick={handleFollow} classic small>
+                            Following
+                        </Button>  :
+                        <Button onClick={handleFollow} outline small>
+                            Follow
+                        </Button>}
                 </div>
             </div>
             <hr  className={cx('feed-divider')}/>

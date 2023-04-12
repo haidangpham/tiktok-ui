@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import styles from './Following.module.scss';
 import UserCard from '../../layouts/components/UserCard';
@@ -16,12 +16,16 @@ const suggestData = [
 ];
 function Following() {
     const [currentPlay, setCurrentPlay] = useState();
-    console.log(currentPlay);
+    const prevCurrentPlay= useRef()
+    useEffect(()=>{
+        prevCurrentPlay.current= currentPlay 
+    }, [currentPlay])
+ 
     return (
         <section className={cx('user-list-wrapper')}>
             <div className={cx('user-card-list')}>
                 {suggestData.map((item, index) => (
-                <UserCard key={index} userId={item.userId} video={item.video} setCurrentPlay={setCurrentPlay} currentPlay={currentPlay} />
+                <UserCard key={index} userId={item.userId} video={item.video} setCurrentPlay={setCurrentPlay} currentPlay={currentPlay} prevCurrentPlay={prevCurrentPlay.current}/>
             ))}
             </div>
             
