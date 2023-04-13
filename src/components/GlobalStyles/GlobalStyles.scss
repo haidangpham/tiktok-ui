@@ -2,12 +2,14 @@
 
 :root {
     --primary: rgba(254, 44, 85, 1);
+    --black-text:  rgba(22, 24, 35, 1);
 
     //default
     --default-header-height: 60px;
     --default-layout-width: 100%;
     --layout-horizontal-spacer: 24px;
     --font-family: 'ProximaNova', sans-serif;
+    --secondary-font-family: 'SofiaPro', sans-serif;
     --sidebar-width: 340px;
 }
 .light {
@@ -102,6 +104,16 @@ html *::-webkit-scrollbar-track {
     font-family: SofiaPro;
     src: url('/assets/fonts/sofiapro-bold.woff2');
     font-weight: 700;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url('/assets/fonts/sofiapro-semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url('/assets/fonts/sofiapro-medium.woff2');
+    font-weight: 500;
 }
 
 //Custom tippy tiptool

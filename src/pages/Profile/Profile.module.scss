@@ -1,0 +1,109 @@
+.wrapper{
+    margin-left: var(--sidebar-width);
+    padding: 32px 24px;
+}
+.div-header{
+    display: flex;
+    margin-bottom: 20px;
+}
+.user-info{
+    margin-bottom: 20px;
+}
+.user-names{
+    margin-left: 20px;
+}
+.user-avatar{
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.username{
+    font-family: var(--secondary-font-family);
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 38px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-align: left;
+}
+.name{
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 25px;
+    overflow: hidden;
+    max-width: 450px;
+    white-space: nowrap;
+    height: 25px;
+}
+.edit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    padding: unset;
+    width: 136px;
+    height: 36px;
+    font-family: var(--secondary-font-family);
+}
+.edit-btn-content{
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    display: flex;
+    text-align: center;
+}
+.edit-icon{
+    margin-right: 6px;
+}
+.count-info{
+    display: flex;
+    margin-top: 22px;
+    column-gap: 20px;
+}
+.div-count{
+    font-family: var(--secondary-font-family);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+.count-label{
+    margin-left: 6px;
+    font-family: var(--font-family);
+    color: var(--text-color-secondary);
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 1.6rem;
+    
+}
+.bio{
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 22px;
+    white-space: pre-line;
+}
+.video-feed-tab{
+    display: flex;
+    font-family: var(--secondary-font-family);
+    width: 100%;
+    border-bottom: 1px solid var(--lines-color);
+    
+}
+.video-feed-tab > *{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 230px;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    cursor: pointer;
+}
+.lock-icon{
+    transform: translateY(2px);
+}
+.liked-label p{
+    margin-left: 6px;
+}

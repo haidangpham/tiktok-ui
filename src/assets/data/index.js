@@ -2,6 +2,18 @@ import videos from '../videos';
 import avatars from '../images/userAvatar';
 
 //USERS
+    //current logged in user
+    export const currentUser= {  
+        username: 'haidanq_123',
+        name: 'Phạm Hải Đăng',
+        avatar: '',
+        following: 78,
+        followers: 123,
+        likes: 321,
+        isVerified: true,
+        bio: 'Music for you!!! 🎧',
+    }
+    
 export const userData = [
     {
         id: 1,

@@ -6,9 +6,10 @@ import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 
+import { ThemeContext } from '../../../App';
+import { currentUser } from '../../../assets/data';
 import Search from '../Search';
 import styles from './Header.module.scss';
-import images from '../../../assets/images';
 import Button from '../Button/Button';
 import Menu from '../Popper/Menu';
 import {
@@ -29,7 +30,6 @@ import {
 } from '../../../components/Icons';
 import Image from '../Image';
 import config from '../../../config';
-import { ThemeContext } from '../../../App';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -79,11 +79,12 @@ function Header({ handleChangeTheme }) {
             default:
         }
     };
-    const currentUser = true;
+    const isLoggedIn = true;
     const userMenu = [
         {
             icon: <UserIcon />,
             title: 'View profile',
+            to: `/@${currentUser.username}`
         },
         {
             icon: <CoinIcon />,
@@ -117,7 +118,7 @@ function Header({ handleChangeTheme }) {
                         <FontAwesomeIcon className={cx('plus')} icon={faPlus} />
                         <span>Upload</span>
                     </Button>
-                    {currentUser ? (
+                    {isLoggedIn ? (
                         <>
                             <Tippy content="Messages" placement="bottom" delay={[0, 50]}>
                                 <button
@@ -154,9 +155,9 @@ function Header({ handleChangeTheme }) {
                             </Button>
                         </>
                     )}
-                    {currentUser ? (
+                    {isLoggedIn ? (
                         <Menu
-                            items={currentUser ? userMenu : MENU_ITEMS}
+                            items={isLoggedIn ? userMenu : MENU_ITEMS}
                             onChange={handleMenuChange}
                             handleChangeTheme={handleChangeTheme}
                         >
