@@ -1,6 +1,7 @@
 .wrapper{
     margin-left: var(--sidebar-width);
     padding: 32px 24px;
+    color: var(--text-color);
 }
 .div-header{
     display: flex;
@@ -85,6 +86,7 @@
 }
 .video-feed-tab{
     display: flex;
+    position: relative;
     font-family: var(--secondary-font-family);
     width: 100%;
     border-bottom: 1px solid var(--lines-color);
@@ -96,6 +98,7 @@
     justify-content: center;
     height: 44px;
     width: 230px;
+    color: var(--text-color-tertiary);
     font-weight: 600;
     font-size: 1.8rem;
     line-height: 2.5rem;
@@ -106,4 +109,26 @@
 }
 .liked-label p{
     margin-left: 6px;
+}
+.bottom-line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 230px;
+    height: 2px;;
+    background-color: var(--text-color);
+    transition: transform 0.3s ease 0s;
+}
+//animation
+.liked-label> *{
+    pointer-events: none;
+}
+.video-label:hover ~ .bottom-line{
+    transform: translateX(0);
+}
+.liked-label:hover ~ .bottom-line{
+    transform: translateX(230px);
+}
+.active{
+    color: var(--text-color);
 }
