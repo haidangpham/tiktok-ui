@@ -9,6 +9,8 @@
 }
 .user-info{
     margin-bottom: 20px;
+    width: auto;
+    max-width: 100%;
 }
 .user-names{
     margin-left: 20px;
@@ -36,6 +38,10 @@
     max-width: 450px;
     white-space: nowrap;
     height: 25px;
+}
+.follow-btn{
+    font-family: var(--secondary-font-family);
+    margin-top: 16px;
 }
 .edit-btn{
     display: flex;
@@ -120,7 +126,7 @@
     transition: transform 0.3s ease 0s;
 }
 //animation
-.liked-label> *{
+.liked-label > *, .video-label > *{
     pointer-events: none;
 }
 .video-label:hover ~ .bottom-line{
@@ -131,4 +137,39 @@
 }
 .active{
     color: var(--text-color);
+    
+}
+.liked-bottom-active ~ .bottom-line{
+    transform: translateX(230px);
+}
+
+.tab-content-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 490px;
+    
+}
+.error-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.user-icon{
+    margin-bottom: 24px;
+    fill-opacity: 0.34
+}
+.title-error{
+    font-family: var(--secondary-font-family);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 28px;
+}
+.error-desc{
+    font-size: 1.6rem;
+    line-height: 22px;
+    font-weight: 400;
+    color: var(--text-color-secondary);
 }

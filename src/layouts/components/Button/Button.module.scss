@@ -68,9 +68,12 @@
 }
 
 .large {
-    min-width: 164px;
-    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 208px;
+    min-height: 24px;
     padding: 6px 8px;
     font-size: 1.8rem;
-    line-height: 2.5rem;
+    line-height: 2.2rem;
 }
