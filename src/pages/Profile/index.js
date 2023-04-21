@@ -4,28 +4,37 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./Profile.module.scss";
-import {currentUser} from '../../assets/data';
+import {currentUser, userData} from '../../assets/data';
 import Image from "../../layouts/components/Image";
 import Button from '../../layouts/components/Button/Button'
 import { LockIcon, UserProfileIcon } from "../../components/Icons";
+import ProfileTab from "../../layouts/components/ProfileTab";
 
 const cx= classNames.bind(styles)
 
-function Profile({  username  }) {
-    //Check If it is current user profile
-    const [isCurrentUser, setIsCurrentUser]= useState(false)
-    if(username === currentUser.username){
-        setIsCurrentUser(true)
-    }
-    document.title = `${currentUser.username} (@${currentUser.username}) | TikTok`;
-    const videoTab = useRef();
-    const likedTab = useRef();
+function Profile({username}) {
+
+    let userInfo;
+    const [isCurrentUser, setIsCurrentUser] = useState(true);
     //Active tab state
     const [activeTab, setActiveTab] = useState('videos');
-
+    
+    //Check If it is current user profile
+    // if (username === currentUser.username) {
+    //     setIsCurrentUser(true);
+    //     userInfo = currentUser;
+    //     console.log('set');
+    // } else {
+    //     userInfo = userData.find((item) => item.username === username);
+    // }
+    
+    const videoTab = useRef();
+    const likedTab = useRef();
+    
+    //Change tab Logic
     const handleChangeTab = (e) => {
         e.target.classList.add(cx('active'));
-        //remove active class & change bottom line position
+        //Logic animation for bottom line position
         if (e.target !== videoTab.current) {
             videoTab.current.classList.remove(cx('active'));
             e.target.classList.add(cx('liked-bottom-active'));
@@ -36,6 +45,7 @@ function Profile({  username  }) {
             setActiveTab('videos');
         }
     };
+    document.title = `${currentUser.username} (@${currentUser.username}) | TikTok`;
     return (
         <div className={cx('wrapper')}>
             <div className={cx('user-info')}>
@@ -84,22 +94,7 @@ function Profile({  username  }) {
                 </div>
                 <div className={cx('bottom-line')}></div>
             </div>
-            <main className={cx('tab-content-wrapper')}>
-                <div className={cx('error-container')}>
-                    <UserProfileIcon className={cx('user-icon')} />
-                    {isCurrentUser ? (
-                        <>
-                            <p className={cx('title-error')}>Upload your first video</p>
-                            <p className={cx('error-desc')}>Your videos will appear here</p>
-                        </>
-                    ) : (
-                        <>
-                            <p className={cx('title-error')}>No content</p>
-                            <p className={cx('error-desc')}>This user has not published any videos.</p>
-                        </>
-                    )}
-                </div>
-            </main>
+            <ProfileTab isCurrentUser={isCurrentUser} tab={activeTab} />
         </div>
     );
 }

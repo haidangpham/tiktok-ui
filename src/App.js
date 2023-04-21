@@ -34,7 +34,7 @@ function App() {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    <ThemeContext.Provider value={theme}>
+                                    (<ThemeContext.Provider value={theme}>
                                         {route.layout ? (
                                             <Layout handleChangeTheme={handleChangeTheme}>
                                                 <Page />
@@ -44,7 +44,7 @@ function App() {
                                                 <Page />
                                             </Layout>
                                         )}
-                                    </ThemeContext.Provider>
+                                    </ThemeContext.Provider>)
                                 }
                             />
                         );

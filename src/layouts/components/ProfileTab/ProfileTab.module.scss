@@ -1,0 +1,33 @@
+.tab-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 490px;
+    
+}
+.error-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.error-icon{
+    margin-bottom: 24px;
+    fill-opacity: 0.34
+}
+.title-error{
+    font-family: var(--secondary-font-family);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+}
+.error-desc{
+    margin-top: 8px;
+    font-size: 1.6rem;
+    line-height: 22px;
+    font-weight: 400;
+    color: var(--text-color-secondary);
+    text-align: center;
+}
