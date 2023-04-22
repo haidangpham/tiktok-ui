@@ -74,7 +74,7 @@ function Search() {
                         className={cx('search-input')}
                         value={searchValue}
                         ref={inputRef}
-                        placeholder="Search accounts and videos"
+                        placeholder="Search"
                         spellCheck={false}
                         autoComplete="false"
                         onChange={handleInput}

@@ -1,59 +1,41 @@
 import classNames from "classnames/bind";
 import { useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./Profile.module.scss";
-import {currentUser, userData} from '../../assets/data';
+import { currentUser, userData } from '../../assets/data';
 import Image from "../../layouts/components/Image";
 import Button from '../../layouts/components/Button/Button'
-import { LockIcon, UserProfileIcon } from "../../components/Icons";
+import { LockIcon } from "../../components/Icons";
 import ProfileTab from "../../layouts/components/ProfileTab";
 
 const cx= classNames.bind(styles)
 
-function Profile({username}) {
-
+function Profile() {
+    const {username}= useParams()
     let userInfo;
-    const [isCurrentUser, setIsCurrentUser] = useState(true);
-    //Active tab state
-    const [activeTab, setActiveTab] = useState('videos');
+    let isCurrentUser= false
     
     //Check If it is current user profile
-    // if (username === currentUser.username) {
-    //     setIsCurrentUser(true);
-    //     userInfo = currentUser;
-    //     console.log('set');
-    // } else {
-    //     userInfo = userData.find((item) => item.username === username);
-    // }
-    
-    const videoTab = useRef();
-    const likedTab = useRef();
-    
-    //Change tab Logic
-    const handleChangeTab = (e) => {
-        e.target.classList.add(cx('active'));
-        //Logic animation for bottom line position
-        if (e.target !== videoTab.current) {
-            videoTab.current.classList.remove(cx('active'));
-            e.target.classList.add(cx('liked-bottom-active'));
-            setActiveTab('liked');
-        } else {
-            likedTab.current.classList.remove(cx('active'));
-            likedTab.current.classList.remove(cx('liked-bottom-active'));
-            setActiveTab('videos');
-        }
-    };
-    document.title = `${currentUser.username} (@${currentUser.username}) | TikTok`;
+    if (username === currentUser.username) {
+        isCurrentUser= true;
+        userInfo = currentUser;
+        console.log('set');
+    } else {
+        isCurrentUser = false;
+        userInfo = userData.find((item) => item.username === username);
+    }
+    document.title = `${userInfo.username} (@${userInfo.username}) | TikTok`;
     return (
         <div className={cx('wrapper')}>
             <div className={cx('user-info')}>
                 <div className={cx('div-header')}>
-                    <Image className={cx('user-avatar')} src={currentUser.avatar} alt="" />
+                    <Image className={cx('user-avatar')} src={userInfo.avatar} alt="" />
                     <div className={cx('user-names')}>
-                        <h2 className={cx('username')}>{currentUser.username}</h2>
-                        <h1 className={cx('name')}>{currentUser.name}</h1>
+                        <h2 className={cx('username')}>{userInfo.username}</h2>
+                        <h1 className={cx('name')}>{userInfo.name}</h1>
                         {isCurrentUser ? (
                             <Button className={cx('edit-btn')} classic>
                                 <div className={cx('edit-btn-content')}>
@@ -70,31 +52,21 @@ function Profile({username}) {
                 </div>
                 <div className={cx('count-info')}>
                     <div className={cx('div-count')}>
-                        <strong>12</strong>
+                        <strong>{userInfo.following}</strong>
                         <span className={cx('count-label')}>Following</span>
                     </div>
                     <div className={cx('div-count')}>
-                        <strong>12</strong>
+                        <strong>{userInfo.followers}</strong>
                         <span className={cx('count-label')}>Followers</span>
                     </div>
                     <div className={cx('div-count')}>
-                        <strong>12</strong>
+                        <strong>{userInfo.likes}</strong>
                         <span className={cx('count-label')}>Likes</span>
                     </div>
                 </div>
-                <h2 className={cx('bio')}>{currentUser.bio === '' ? 'No bio yet.' : currentUser.bio}</h2>
+                <h2 className={cx('bio')}>{userInfo.bio === '' ? 'No bio yet.' : userInfo.bio}</h2>
             </div>
-            <div className={cx('video-feed-tab')}>
-                <div ref={videoTab} className={cx('video-label', 'active')} onClick={(e) => handleChangeTab(e)}>
-                    <p>Videos</p>
-                </div>
-                <div ref={likedTab} className={cx('liked-label')} onClick={(e) => handleChangeTab(e)}>
-                    <LockIcon className={cx('lock-icon')} />
-                    <p>Liked</p>
-                </div>
-                <div className={cx('bottom-line')}></div>
-            </div>
-            <ProfileTab isCurrentUser={isCurrentUser} tab={activeTab} />
+            <ProfileTab isCurrentUser={isCurrentUser} username={username} />
         </div>
     );
 }

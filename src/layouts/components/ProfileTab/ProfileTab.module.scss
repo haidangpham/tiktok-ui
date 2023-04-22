@@ -6,6 +6,60 @@
     min-height: 490px;
     
 }
+.video-feed-tab{
+    display: flex;
+    position: relative;
+    font-family: var(--secondary-font-family);
+    width: 100%;
+    border-bottom: 1px solid var(--lines-color);
+    
+}
+.video-feed-tab > *{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 230px;
+    color: var(--text-color-tertiary);
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    cursor: pointer;
+}
+.liked-label p{
+    margin-left: 6px;
+}
+.lock-icon{
+    transform: translateY(2px);
+}
+.bottom-line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 230px;
+    height: 2px;;
+    background-color: var(--text-color);
+    transition: transform 0.3s ease 0s;
+}
+//animation
+.liked-label > *, .video-label > *{
+    pointer-events: none;
+}
+.video-label:hover ~ .bottom-line{
+    transform: translateX(0);
+}
+.liked-label:hover ~ .bottom-line{
+    transform: translateX(230px);
+}
+.active{
+    color: var(--text-color);
+    
+}
+.liked-bottom-active ~ .bottom-line{
+    transform: translateX(230px);
+}
+
+
 .error-container{
     display: flex;
     flex-direction: column;

@@ -8,6 +8,7 @@ import Button from '../Button/Button';
 //temporary avatar
 import images from '../../../assets/images';
 import { CheckCircle } from '../../../components/Icons';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function AccountPopper({
@@ -39,10 +40,14 @@ function AccountPopper({
                 render={(props) => (
                     <div className={cx('popper-wrapper')} {...props}>
                         <div className={cx('popper-header')}>
-                            <img className={cx('avatar-popper')} src={userInfo.avatar || images.noImage} alt="" />
+                            <Link to={`/@${userInfo.username}`} target='_blank'><img className={cx('avatar-popper')} src={userInfo.avatar || images.noImage} alt="" /></Link>
                             <div className={cx('btn-popper')}>
                                 {/* Following Button */}
-                                { following ?<Button onClick={handleFollow} classic><span>Following</span></Button> :(primary ? (
+                                {following ? (
+                                    <Button onClick={handleFollow} classic>
+                                        <span>Following</span>
+                                    </Button>
+                                ) : primary ? (
                                     <Button onClick={handleFollow} primary>
                                         <span>Follow</span>
                                     </Button>
@@ -50,12 +55,12 @@ function AccountPopper({
                                     <Button onClick={handleFollow} outline>
                                         <span>Follow</span>
                                     </Button>
-                                ))}
+                                )}
                             </div>
                         </div>
-                        <span className={cx('username-popper')}>{userInfo.username}</span>
+                        <Link to={`/@${userInfo.username}`} target='_blank'><span className={cx('username-popper')}>{userInfo.username}</span></Link>
                         <CheckCircle className={cx('check-circle')} />
-                        <p className={cx('name-popper')}>{userInfo.name}</p>
+                        <Link to={`/@${userInfo.username}`} target='_blank'><p className={cx('name-popper')}>{userInfo.name}</p></Link>
                         <span className={cx('count')}>{userInfo.followers}</span>
                         <span className={cx('f-l')}>Followers</span>
                         <span className={cx('count')}>{userInfo.likes}</span>

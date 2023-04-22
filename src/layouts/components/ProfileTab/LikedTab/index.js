@@ -5,7 +5,7 @@ import styles from '../ProfileTab.module.scss';
 
 const cx = classNames.bind(styles);
 
-function LikedTab({isCurrentUser}) {
+function LikedTab({ isCurrentUser, username }) {
     return (
         <div>
             {isCurrentUser ? (
@@ -16,8 +16,7 @@ function LikedTab({isCurrentUser}) {
             ) : (
                 <>
                     <p className={cx('title-error')}>This user's liked videos are private</p>
-                    {/* get username here */}
-                    <p className={cx('error-desc')}>Videos liked by ? are currently hidden</p>
+                    <p className={cx('error-desc')}>Videos liked by {username} are currently hidden</p>
                 </>
             )}
         </div>

@@ -11,6 +11,7 @@ import AccountPopper from '../../AccountPopper';
 import { posts, userData } from '../../../../assets/data';
 import Player from '../Player';
 import SharePopper from '../../SharePopper';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -45,18 +46,22 @@ function FeedItem({ postId }) {
                     following={following}
                     handleFollow={handleFollow}
                 >
-                    <img src={userInfo.avatar} alt="avatar" className={cx('avatar')} ref={triggerRef1} />
+                    <Link to={`/@${userInfo.username}`}>
+                        <img src={userInfo.avatar} alt="avatar" className={cx('avatar')} ref={triggerRef1} />
+                    </Link>
                 </AccountPopper>
             </span>
             <div className={cx('content')}>
-                {
-                    <h3 className={cx('username')} ref={triggerRef2}>
-                        {userInfo.username}
-                        <FontAwesomeIcon icon={faCheckCircle} className={cx('check-circle')} />
-                    </h3>
-                }
-
+                <div className={cx('div-username')}>
+                    <Link to={`/@${userInfo.username}`}>
+                        <h3 className={cx('username')} ref={triggerRef2}>
+                            {userInfo.username}
+                            <FontAwesomeIcon icon={faCheckCircle} className={cx('check-circle')} />
+                        </h3>
+                    </Link>
                 <p className={cx('name')}>{userInfo.name}</p>
+                </div>
+                    
 
                 <div className={cx('post-desc')}>
                     <span>{postInfo.desc}</span>
@@ -94,16 +99,18 @@ function FeedItem({ postId }) {
                     </div>
                 </div>
                 <div className={cx('follow-wrapper')}>
-                    {following?
+                    {following ? (
                         <Button onClick={handleFollow} classic small>
                             Following
-                        </Button>  :
+                        </Button>
+                    ) : (
                         <Button onClick={handleFollow} outline small>
                             Follow
-                        </Button>}
+                        </Button>
+                    )}
                 </div>
             </div>
-            <hr  className={cx('feed-divider')}/>
+            <hr className={cx('feed-divider')} />
         </div>
     );
 }

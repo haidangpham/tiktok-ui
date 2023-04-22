@@ -9,6 +9,7 @@ import images from '../../../../assets/images';
 import AccountPopper from '../../AccountPopper';
 import { CheckCircle } from '../../../../components/Icons';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function SuggestAccountItem({ id }) {
@@ -26,16 +27,18 @@ function SuggestAccountItem({ id }) {
     return (
         <div>
             <AccountPopper userInfo={userInfo} delay={[900, 0]} primary offset={[-8, 0]} following={following} handleFollow={handleFollow}>
-                <div className={cx('account-items')}>
-                    <img className={cx('avatar')} src={userInfo.avatar} alt="" />
-                    <div className={cx('item-info')}>
-                        <p className={cx('username')}>
-                            {userInfo.username}
-                            {userInfo.isVerified ? <CheckCircle className={cx('check-circle')} /> : <></>}
-                        </p>
-                        <p className={cx('name')}>{userInfo.name}</p>
+                <Link to={`/@${userInfo.username}`}>
+                    <div className={cx('account-items')}>
+                        <img className={cx('avatar')} src={userInfo.avatar} alt="" />
+                        <div className={cx('item-info')}>
+                            <p className={cx('username')}>
+                                {userInfo.username}
+                                {userInfo.isVerified ? <CheckCircle className={cx('check-circle')} /> : <></>}
+                            </p>
+                            <p className={cx('name')}>{userInfo.name}</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
             </AccountPopper>
         </div>
     );

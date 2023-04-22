@@ -23,9 +23,9 @@
     z-index: 0;
 }
 //post-info
-.post-desc {
-    width: 510px;
-    overflow-wrap: break-word;
+.div-username{
+    display: inline-block;
+    cursor: pointer;
 }
 .check-circle {
     margin-left: 4px;
@@ -40,7 +40,6 @@
 .username {
     font-weight: 700;
     margin-right: 4px;
-    cursor: pointer;
     &:hover {
         text-decoration: underline;
     }
@@ -48,6 +47,13 @@
 .name {
     font-size: 1.4rem;
     font-weight: 400;
+    &:hover ~ .username:hover{
+        color: red
+    }
+}
+.post-desc {
+    width: 510px;
+    overflow-wrap: break-word;
 }
 //music-track
 .video-music {
