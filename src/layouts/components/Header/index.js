@@ -114,10 +114,12 @@ function Header({ handleChangeTheme }) {
                 <Search />
 
                 <div className={cx('actions')}>
-                    <Button classic>
-                        <FontAwesomeIcon className={cx('plus')} icon={faPlus} />
-                        <span>Upload</span>
-                    </Button>
+                    <Link to={'/upload'}>
+                        <Button classic>
+                            <FontAwesomeIcon className={cx('plus')} icon={faPlus} />
+                            <span>Upload</span>
+                        </Button>
+                    </Link>
                     {isLoggedIn ? (
                         <>
                             <Tippy content="Messages" placement="bottom" delay={[0, 50]}>

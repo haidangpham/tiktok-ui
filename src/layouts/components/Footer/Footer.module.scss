@@ -1,0 +1,25 @@
+.content-text a[href]{
+    color: unset;
+}
+.footer-wrapper{
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    background: #000;
+    padding-bottom: 24px;
+}
+.footer-content-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+.footer-content-column{
+    display: flex;
+    flex-direction: column;
+    width: 226px;
+}
+.content-text{
+    color: #fff;
+}
+.tiktok-logo{
+    font-size: 159px;
+}

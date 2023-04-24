@@ -13,6 +13,7 @@ function Button({
     outline = false,
     small = false,
     large = false,
+    extraLarge= false,
     classic = false,
     disabled = false,
     to,
@@ -36,7 +37,7 @@ function Button({
         props.href = href;
         Comp = 'a';
     }
-    const classes = cx('wrapper', className,{ primary, outline, small, large, classic, disabled }, theme);
+    const classes = cx('wrapper', className,{ primary, outline, small, large,extraLarge, classic, disabled }, theme);
     return (
         <Comp onClick={onClick} className={classes} {...props}>
             <span>{children}</span>

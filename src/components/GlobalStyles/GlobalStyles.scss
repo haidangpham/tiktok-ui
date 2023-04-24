@@ -14,10 +14,10 @@
 }
 .light {
     --text-color: rgb(22, 24, 35);
-    --background-color: #fff;
-    --background-color-secondary: #fff;
     --text-color-secondary: rgba(22, 24, 35, 0.75);
     --text-color-tertiary: rgba(22, 24, 35, 0.5);
+    --background-color: #fff;
+    --background-color-secondary: #fff;
     --field-background: rgba(22, 24, 35, 0.06);
     --action-btn-background: rgba(22, 24, 35, 0.06);
     //
@@ -29,11 +29,11 @@
     --icons-color: rgba(22, 24, 35, 0.34);
 }
 .dark {
-    --background-color: rgb(18, 18, 18);
-    --background-color-secondary: rgb(37, 37, 37);
     --text-color: rgba(255, 255, 255, 0.9);
     --text-color-secondary: rgba(255, 255, 255, 0.75);
     --text-color-tertiary: rgba(255, 255, 255, 0.5);
+    --background-color: rgb(18, 18, 18);
+    --background-color-secondary: rgb(37, 37, 37);
     --field-background: rgba(255, 255, 255, 0.12);
     --action-btn-background: rgba(255, 255, 255, 0.12);
     //like-cmt, upload-btn

@@ -27,7 +27,7 @@ function Profile() {
         isCurrentUser = false;
         userInfo = userData.find((item) => item.username === username);
     }
-    document.title = `${userInfo.username} (@${userInfo.username}) | TikTok`;
+    document.title = `${userInfo.name} (@${userInfo.username}) | TikTok`;
     return (
         <div className={cx('wrapper')}>
             <div className={cx('user-info')}>
